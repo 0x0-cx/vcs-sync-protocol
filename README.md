@@ -21,10 +21,21 @@ Besides
 
 ## Existing approaches
 
-- One-way git-repo-only sync "self-hosted" => "github"
+- [One-way git-repo-only sync "self-hosted" => "GitHub"](https://gitlab.lunatic.cat/help/user/project/repository/repository_mirroring.md#setting-up-a-push-mirror-from-gitlab-to-github)
+- [One-way git-repo-only sync "github" => "self-hosted"](https://jsramblings.com/automatically-sync-gitlab-mirrored-repository-on-every-push-to-github/)
 
-Pro: easy, sometimes out of the box, possible with `.git/hooks`
-Contra: stars/watchers/issues/pull-requests are stored out-of-the-repo
+Pro: easy, sometimes out of the box, also possible with 
+Contra: stars/watchers/issues/pull-requests are stored out-of-the-repo, need _personal_ token
+
+- Same `origins` and `.git/hooks` on every pushing host
+
+Pro: no other stuff required
+Contra: git-code-only, extra coordination needed
+
+- [Two-way GitHub<=>GitLab sync](https://github.com/IgnoredAmbience/github-gitlab-sync)
+
+Pro: two way
+Contra: git-code-only, complicated setup, very opinionated/coupled
 
 ## Suggestion overview
 
