@@ -25,16 +25,19 @@ Besides
 - [One-way git-repo-only sync "github" => "self-hosted"](https://jsramblings.com/automatically-sync-gitlab-mirrored-repository-on-every-push-to-github/)
 
 Pro: easy, sometimes out of the box, also possible with 
+
 Contra: stars/watchers/issues/pull-requests are stored out-of-the-repo, need _personal_ token
 
 - Same `origins` and `.git/hooks` on every pushing host
 
 Pro: no other stuff required
+
 Contra: git-code-only, extra coordination needed
 
 - [Two-way GitHub<=>GitLab sync](https://github.com/IgnoredAmbience/github-gitlab-sync)
 
 Pro: two way
+
 Contra: git-code-only, complicated setup, very opinionated/coupled
 
 ## Suggestion overview
