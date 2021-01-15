@@ -57,6 +57,30 @@ Contra: git-code-only, complicated setup, very opinionated/coupled
 - message: text
 - patch
 
+## VCS for Fediverse
+
+- Consider payload similar to [ActivityPub](https://blog.joinmastodon.org/2018/06/how-to-implement-a-basic-activitypub-server/) message: possible to setup a github hook => mastodon/fediverse bridge
+
+```json
+{
+	"@context": "https://www.w3.org/ns/activitystreams",
+
+	"id": "https://my-example.com/create-hello-world",
+	"type": "Create",
+	"actor": "https://my-example.com/actor",
+
+	"object": {
+		"id": "https://my-example.com/hello-world",
+		"type": "Note",
+		"published": "2018-06-23T17:17:11Z",
+		"attributedTo": "https://my-example.com/actor",
+		"inReplyTo": "https://mastodon.social/@Gargron/100254678717223630",
+		"content": "<p>Hello world</p>",
+		"to": "https://www.w3.org/ns/activitystreams#Public"
+	}
+}
+```
+
 ## VCS Sync Protocol (Actions)
 
 - merge
