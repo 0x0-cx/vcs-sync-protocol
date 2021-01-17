@@ -1,0 +1,34 @@
+@startuml
+participant GitHubUser
+
+participant GitHub
+participant "VCS-protocol-server-A"
+box
+participant GitHub
+participant "VCS-protocol-server-A"
+end box
+
+participant "VCS-protocol-server-B"
+participant HostedGitLab
+box
+participant "VCS-protocol-server-B"
+participant HostedGitLab
+end box
+
+participant GitLabUser
+
+note over "VCS-protocol-server-B": VCS server owns hosted gitlab
+
+GitHubUser -> GitHub: Create a PR
+GitHub -> "VCS-protocol-server-A": "opened" action webhook
+note over "VCS-protocol-server-A": VCS server own GitHub Application installed in GitHub Repo
+
+"VCS-protocol-server-A" -> "VCS-protocol-server-B": Send PR patch using good old SMTP
+
+"VCS-protocol-server-B" -> HostedGitLab: Create an MR with the patch
+GitLabUser -> HostedGitLab: Merge an MR
+HostedGitLab -> "VCS-protocol-server-B": "merged" action webhook
+"VCS-protocol-server-B" -> "VCS-protocol-server-A": Send merged info using good old SMTP
+"VCS-protocol-server-A" -> GitHub: Merge a PR
+
+@enduml

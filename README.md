@@ -50,6 +50,8 @@ Contra: git-code-only, complicated setup, very opinionated/coupled
 - Sink-proxy is a sidecar container running aside of code-management system, able to access its repos and storage
 - Sink-proxy accepts a "VCS Sync Message" and does according storage changes
   basically sink-proxy just allows to create Merge Requests without being registered explicitly
+  
+![Vision UML](https://raw.githubusercontent.com/0x0-cx/vcs-sync-protocol/master/assets/vision-uml.png)
 
 ## VCS Sync Message
 
